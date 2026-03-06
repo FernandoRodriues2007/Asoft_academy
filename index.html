@@ -12,32 +12,29 @@
 
 <body class="">
 
-    <header class="p-4 bg-white flex  justify-between items-center  border">
+    <header class="relative p-4 bg-white flex  justify-between items-center  border">
         <h1 class="flex gap-2 text-3xl font-bold text-purple-600"> <span
                 class="px-2 py-1 border rounded-lg bg-purple-600 text-white flex items-center justify-center ">A</span>
             asoft </h1>
-        <nav
-            class="flex justify-between gap-8 w-1/2 lg:flex lg:items-center xl:flex xl:items-center md:flex md:items-center sm:hidden hidden">
-            <ul class="flex items-center space-x-4 gap-8">
-                <li><a href="" class="text-1xl hover:text-purple-600 transition">Inicio</a></li>
-                <li><a href="" class=" text-1xl hover:text-purple-600 transition">Curso</a></li>
-                <li><a href="" class=" text-1xl hover:text-purple-600 transition">Depoimentos</a></li>
-                <li><a href="" class="text-1xl hover:text-purple-600 transition">Contato</a></li>
-            </ul>
-            <ul class="flex items-center space-x-2 gap-2">
-                <li><a href="" class="  text-dark semi-bold  hover:text-purple-500 transition ">Entrar</a></li>
-                <li><a href="Cadastro.html"
-                        class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition text-center">Começar
-                        Grátis</a></li>
-            </ul>
-        </nav>
         <!-- Menu para dispositivos móveis -->
         <div class="lg:hidden xl:hidden md:hidden sm:flex flex items-center">
             <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-
+                <i id="burger-icon" class="fas fa-bars text-2xl"></i>
+                <i id="close-icon" class="fas fa-times text-2xl hidden"></i>
             </button>
         </div>
+        <nav id="nav-menu"
+            class="absolute top-full left-0 w-full bg-white z-10 hidden flex-col gap-4 p-4 sm:relative sm:top-auto sm:left-auto sm:w-auto sm:bg-transparent sm:z-auto sm:flex sm:flex-row sm:justify-between sm:gap-8">
+            <ul class="flex flex-col sm:flex-row items-center sm:space-x-4 gap-4 sm:gap-8">
+                <li class="w-full sm:w-auto"><a href="" class="block text-1xl hover:text-purple-600 transition">Inicio</a></li>
+                <li class="w-full sm:w-auto"><a href="" class="block text-1xl hover:text-purple-600 transition">Curso</a></li>
+                <li class="w-full sm:w-auto"><a href="" class="block text-1xl hover:text-purple-600 transition">Depoimentos</a></li>
+                <li class="w-full sm:w-auto"><a href="" class="block text-1xl hover:text-purple-600 transition">Contato</a></li>
+
+                <li class="w-full sm:w-auto"><a href="auth.html" class="block text-dark semi-bold hover:text-purple-500 transition">Entrar</a></li>
+                
+            </ul>
+        </nav>
     </header>
     <main class="flex flex-col items-center justify-center  bg-gradient-to-r from-white to-purple-50 gap-6 ">
         <section
@@ -82,7 +79,8 @@
 
         </section>
 
-        <section class="w-full grid  bg-white  place-items-center items-center justify-items-center " data-aos="fade-left">
+        <section class="w-full grid  bg-white  place-items-center items-center justify-items-center "
+            data-aos="fade-left">
             <h1 class="mt-12 text-4xl font-bold text-gray-800 col-span-full text-center"> Porque escolher a <span
                     class="text-purple-500">Asoft</span>?</h1>
             <p class="text-gray-500 text-1xl">Recursos que vão acelerar o seu aprendizado</p>
@@ -208,13 +206,17 @@
         </section>
         <section class="w-full bg-white py-12" id="depoimento" data-aos="fade-up">
             <h1 class="text-4xl font-bold text-gray-800 text-center mb-4">Depoimentos</h1>
-            <p class="text-gray-500 text-center mb-8">Veja o que nossos alunos e especialistas têm a dizer sobre a Asoft Academy</p>
-            <div class="grid grid-cols-1 gap-8 w-full max-w-7xl mx-auto px-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <p class="text-gray-500 text-center mb-8">Veja o que nossos alunos e especialistas têm a dizer sobre a Asoft
+                Academy</p>
+            <div
+                class="grid grid-cols-1 gap-8 w-full max-w-7xl mx-auto px-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
                 <!-- Depoimento de Aluno 1 -->
                 <div class="border rounded-lg p-6 bg-gradient-to-r from-white to-purple-50 hover:shadow-lg transition">
-                    <p class="text-gray-600 mb-4">"A Asoft Academy transformou minha carreira. Os cursos são práticos e os instrutores são incríveis!"</p>
+                    <p class="text-gray-600 mb-4">"A Asoft Academy transformou minha carreira. Os cursos são práticos e
+                        os instrutores são incríveis!"</p>
                     <div class="flex items-center gap-4">
-                        <img src="assets/img/aluno1.jpg" alt="Foto de João Silva" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/img/aluno1.jpg" alt="Foto de João Silva"
+                            class="w-12 h-12 rounded-full object-cover">
                         <div>
                             <p class="font-bold text-gray-800">João Silva</p>
                             <p class="text-gray-500 text-sm">Desenvolvedor Web</p>
@@ -223,9 +225,11 @@
                 </div>
                 <!-- Depoimento de Especialista 1 -->
                 <div class="border rounded-lg p-6 bg-gradient-to-r from-white to-blue-50 hover:shadow-lg transition">
-                    <p class="text-gray-600 mb-4">"Como especialista em tecnologia, recomendo a Asoft Academy. Seus cursos preparam os alunos para o mercado real com projetos práticos."</p>
+                    <p class="text-gray-600 mb-4">"Como especialista em tecnologia, recomendo a Asoft Academy. Seus
+                        cursos preparam os alunos para o mercado real com projetos práticos."</p>
                     <div class="flex items-center gap-4">
-                        <img src="assets/img/imginicial.png" alt="Foto de Ana Costa" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/img/imginicial.png" alt="Foto de Ana Costa"
+                            class="w-12 h-12 rounded-full object-cover">
                         <div>
                             <p class="font-bold text-gray-800">Ana Costa</p>
                             <p class="text-gray-500 text-sm">Especialista em DevOps</p>
@@ -234,9 +238,11 @@
                 </div>
                 <!-- Depoimento de Aluno 2 -->
                 <div class="border rounded-lg p-6 bg-gradient-to-r from-white to-purple-50 hover:shadow-lg transition">
-                    <p class="text-gray-600 mb-4">"Os projetos práticos me ajudaram a construir um portfólio impressionante. Consegui um emprego na área graças à Asoft!"</p>
+                    <p class="text-gray-600 mb-4">"Os projetos práticos me ajudaram a construir um portfólio
+                        impressionante. Consegui um emprego na área graças à Asoft!"</p>
                     <div class="flex items-center gap-4">
-                        <img src="assets/img/imginicial.png" alt="Foto de Maria Oliveira" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/img/imginicial.png" alt="Foto de Maria Oliveira"
+                            class="w-12 h-12 rounded-full object-cover">
                         <div>
                             <p class="font-bold text-gray-800">Maria Oliveira</p>
                             <p class="text-gray-500 text-sm">Data Scientist</p>
@@ -245,9 +251,11 @@
                 </div>
                 <!-- Depoimento de Especialista 2 -->
                 <div class="border rounded-lg p-6 bg-gradient-to-r from-white to-blue-50 hover:shadow-lg transition">
-                    <p class="text-gray-600 mb-4">"A metodologia da Asoft Academy é inovadora. Eles focam no aprendizado hands-on, essencial para profissionais de TI."</p>
+                    <p class="text-gray-600 mb-4">"A metodologia da Asoft Academy é inovadora. Eles focam no aprendizado
+                        hands-on, essencial para profissionais de TI."</p>
                     <div class="flex items-center gap-4">
-                        <img src="assets/img/imginicial.png" alt="Foto de Roberto Lima" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/img/imginicial.png" alt="Foto de Roberto Lima"
+                            class="w-12 h-12 rounded-full object-cover">
                         <div>
                             <p class="font-bold text-gray-800">Roberto Lima</p>
                             <p class="text-gray-500 text-sm">Especialista em IA</p>
@@ -256,9 +264,11 @@
                 </div>
                 <!-- Depoimento de Aluno 3 -->
                 <div class="border rounded-lg p-6 bg-gradient-to-r from-white to-purple-50 hover:shadow-lg transition">
-                    <p class="text-gray-600 mb-4">"A mentoria personalizada fez toda a diferença para mim. Os instrutores realmente se importam com o sucesso dos alunos."</p>
+                    <p class="text-gray-600 mb-4">"A mentoria personalizada fez toda a diferença para mim. Os
+                        instrutores realmente se importam com o sucesso dos alunos."</p>
                     <div class="flex items-center gap-4">
-                        <img src="assets/img/imginicial.png" alt="Foto de Carlos Pereira" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/img/imginicial.png" alt="Foto de Carlos Pereira"
+                            class="w-12 h-12 rounded-full object-cover">
                         <div>
                             <p class="font-bold text-gray-800">Carlos Pereira</p>
                             <p class="text-gray-500 text-sm">Engenheiro de Software</p>
@@ -267,9 +277,11 @@
                 </div>
                 <!-- Depoimento de Especialista 3 -->
                 <div class="border rounded-lg p-6 bg-gradient-to-r from-white to-blue-50 hover:shadow-lg transition">
-                    <p class="text-gray-600 mb-4">"Recomendo a Asoft para qualquer um interessado em tecnologia. Seus cursos cobrem as habilidades mais demandadas do mercado."</p>
+                    <p class="text-gray-600 mb-4">"Recomendo a Asoft para qualquer um interessado em tecnologia. Seus
+                        cursos cobrem as habilidades mais demandadas do mercado."</p>
                     <div class="flex items-center gap-4">
-                        <img src="assets/img/imginicial.png" alt="Foto de Sofia Mendes" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/img/imginicial.png" alt="Foto de Sofia Mendes"
+                            class="w-12 h-12 rounded-full object-cover">
                         <div>
                             <p class="font-bold text-gray-800">Sofia Mendes</p>
                             <p class="text-gray-500 text-sm">Especialista em Cybersecurity</p>
@@ -307,6 +319,18 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        // mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const navMenu = document.getElementById('nav-menu');
+        const burgerIcon = document.getElementById('burger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            burgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
     </script>
 
 </body>
